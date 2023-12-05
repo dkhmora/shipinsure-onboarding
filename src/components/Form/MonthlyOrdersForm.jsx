@@ -16,11 +16,8 @@ export default function MonthlyOrdersForm() {
   };
 
   const validateForm = () => {
-    return {};
+    return selectedIndex !== null;
   };
-
-  const errors = validateForm();
-  const formValid = Object.keys(errors).length === 0;
 
   return (
     <section class="form-container">
@@ -42,10 +39,10 @@ export default function MonthlyOrdersForm() {
 
         <button
           className={`form-submit-button ${
-            !formValid ? "disabled-form-submit-button" : ""
+            !validateForm() ? "disabled-form-submit-button" : ""
           }`}
           type="submit"
-          disabled={formValid}
+          disabled={!validateForm()}
         >
           Next
         </button>
