@@ -10,6 +10,7 @@ export default function TextInput({
   onClickUpdate,
   textInputClassName,
   hasError,
+  postpend,
 }) {
   return (
     <section className="main-text-input-container">
@@ -38,6 +39,8 @@ export default function TextInput({
             <span className="update-button-text">update</span>
           </button>
         ) : null}
+
+        <div className="text-input-postpend-container">{postpend}</div>
       </div>
     </section>
   );

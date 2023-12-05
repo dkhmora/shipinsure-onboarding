@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PlaidIcon from "../../assets/icons/PlaidLogo.svg";
 import "./Form.css";
 import TextInput from "./TextInput";
+import PaymentMethodIcons from "./PaymentMethodIcons";
 
 export default function BillingForm() {
   const [formData, setFormData] = useState({
@@ -80,6 +81,7 @@ export default function BillingForm() {
             required
             textInputClassName="text-input"
             hasError={errors.email}
+            postpend={<PaymentMethodIcons />}
           />
         </section>
 

@@ -157,6 +157,17 @@ p {
   background-color: #fff;
 }
 
+.text-input-postpend-container {
+  position: absolute;
+  padding: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  right: 0px;
+  bottom: 16px;
+  border-width: 0px;
+  background-color: #fff;
+}
+
 .update-button-text {
   color: var(--utility-purple, #6675ff);
 
@@ -320,4 +331,17 @@ p {
   letter-spacing: 0.25px;
   text-decoration-line: underline;
   cursor: pointer;
+}
+
+.payment-method-icons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-method-icons {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-left: 10px;
 }
