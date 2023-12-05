@@ -1,12 +1,11 @@
 import React from "react";
 import RadioIcon from "../../assets/icons/Radio.svg";
 import CheckIcon from "../../assets/icons/Check.svg";
-import { onboardingSteps } from "../../constants";
 
-export default function Steps() {
+export default function Steps({ steps }) {
   return (
     <div className="steps-container">
-      {onboardingSteps.map(({ title, required, completed }, index) => (
+      {steps.map(({ title, required, completed }, index) => (
         <div className="step-text-container">
           {completed ? (
             <img src={CheckIcon} className="step-icon" alt="radio" />

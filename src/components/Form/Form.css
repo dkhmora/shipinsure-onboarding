@@ -41,7 +41,7 @@ p {
   width: 541px;
   height: 23px;
   flex-shrink: 0;
-  color: var(--neutral-midnight-2, rgba(6, 0, 30, 0.75));
+  color: var(--Midnight, #06001e);
   text-align: center;
 
   /* Open Sans/Body 1 */

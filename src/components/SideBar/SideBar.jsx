@@ -4,11 +4,11 @@ import Header from "./Header";
 import Steps from "./Steps";
 import HelpButton from "./HelpButton";
 
-export default function SideBar() {
+export default function SideBar({ steps }) {
   return (
     <div className="sidebar-container">
       <Header />
-      <Steps />
+      <Steps steps={steps} />
       <HelpButton />
     </div>
   );
