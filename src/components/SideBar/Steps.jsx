@@ -1,27 +1,24 @@
 import React from "react";
 import RadioIcon from "../../assets/icons/Radio.svg";
 import CheckIcon from "../../assets/icons/Check.svg";
+import { onboardingSteps } from "../../constants";
 
 export default function Steps() {
   return (
     <div class="steps-container">
-      <div class="step-text-container">
-        <img src={RadioIcon} class="step-icon" alt="radio" />
+      {onboardingSteps.map(({ title, required, completed }, index) => (
+        <div class="step-text-container">
+          {completed ? (
+            <img src={CheckIcon} class="step-icon" alt="radio" />
+          ) : (
+            <img src={RadioIcon} class="step-icon" alt="radio" />
+          )}
 
-        <div class="selected-step-text">Personal Info</div>
-      </div>
+          <div class="default-step-text">{title}</div>
 
-      <div class="step-text-container">
-        <img src={RadioIcon} class="step-icon" alt="radio" />
-
-        <div class="default-step-text">Monthly Orders</div>
-      </div>
-
-      <div class="step-text-container">
-        <img src={RadioIcon} class="step-icon" alt="radio" />
-
-        <div class="default-step-text">Billing</div>
-      </div>
+          {required ? <div class="required-step-text">Required</div> : null}
+        </div>
+      ))}
     </div>
   );
 }
