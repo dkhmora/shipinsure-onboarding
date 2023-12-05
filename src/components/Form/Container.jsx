@@ -8,7 +8,10 @@ import BillingForm from "./BillingForm";
 export default function Container({ steps, onSubmit }) {
   const renderForm = () => {
     const firstFalseCompletedIndex = steps.findIndex((step) => !step.completed);
-    const formTitle = steps[firstFalseCompletedIndex].title;
+    const formTitle =
+      firstFalseCompletedIndex >= 0
+        ? steps[firstFalseCompletedIndex].title
+        : "Success Page";
 
     switch (formTitle) {
       case "Personal Info":
@@ -18,7 +21,11 @@ export default function Container({ steps, onSubmit }) {
       case "Billing":
         return <BillingForm stepTitle={formTitle} onSubmit={onSubmit} />;
       default:
-        return <div>Error: Invalid User Role</div>;
+        return (
+          <div>
+            <p className="success-text">Welcome to the ShipInsure family!</p>
+          </div>
+        );
     }
   };
 

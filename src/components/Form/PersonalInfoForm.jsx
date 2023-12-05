@@ -57,7 +57,7 @@ export default function PersonalInfoForm({ stepTitle, onSubmit }) {
   const formValid = Object.keys(errors).length === 0;
 
   return (
-    <section class="form-container">
+    <section className="form-container">
       <h1 className="form-title-text">Welcome, {"{NAME}"}!</h1>
 
       <p className="form-subtitle-text">

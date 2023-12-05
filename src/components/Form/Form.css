@@ -362,3 +362,17 @@ p {
 .question-icon {
   margin-left: 6px;
 }
+
+.success-text {
+  color: var(--Slate, #3d5781);
+  text-align: center;
+
+  /* H4 | Montserrat */
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px; /* 116.667% */
+  letter-spacing: 0.18px;
+  margin-bottom: 50px;
+}

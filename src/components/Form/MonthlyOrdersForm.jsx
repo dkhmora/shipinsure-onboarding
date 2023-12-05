@@ -20,7 +20,7 @@ export default function MonthlyOrdersForm({ stepTitle, onSubmit }) {
   };
 
   return (
-    <section class="form-container">
+    <section className="form-container">
       <h1 className="form-title-text">Tell us a bit about your store!</h1>
 
       <p className="form-subtitle-text">

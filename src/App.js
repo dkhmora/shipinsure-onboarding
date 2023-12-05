@@ -8,7 +8,15 @@ function App() {
   const [steps, setSteps] = useState(onboardingSteps);
 
   const handleFormSubmit = (stepTitle, formData) => {
-    console.log(stepTitle, formData);
+    const stepTitleIndex = steps.findIndex((step) => step.title === stepTitle);
+
+    setSteps((prevVal) => {
+      const curr = [...prevVal];
+
+      curr[stepTitleIndex] = { ...curr[stepTitleIndex], completed: true };
+
+      return curr;
+    });
   };
 
   return (

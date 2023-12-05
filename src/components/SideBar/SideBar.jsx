@@ -6,7 +6,10 @@ import HelpButton from "./HelpButton";
 
 export default function SideBar({ steps }) {
   const firstFalseCompletedIndex = steps.findIndex((step) => !step.completed);
-  const selectedStepTitle = steps[firstFalseCompletedIndex].title;
+  const selectedStepTitle =
+    firstFalseCompletedIndex >= 0
+      ? steps[firstFalseCompletedIndex].title
+      : "Success Page";
 
   return (
     <div className="sidebar-container">

@@ -59,7 +59,7 @@ export default function BillingForm({ stepTitle, onSubmit }) {
   const formValid = Object.keys(errors).length === 0;
 
   return (
-    <section class="form-container">
+    <section className="form-container">
       <div className="form-title-container">
         <h1 className="form-title-text">
           ShipInsure is free, here is how it works

@@ -3,7 +3,6 @@ import RadioIcon from "../../assets/icons/Radio.svg";
 import CheckIcon from "../../assets/icons/Check.svg";
 
 export default function Steps({ steps, selectedStepTitle }) {
-  console.log(selectedStepTitle);
   return (
     <div className="steps-container">
       {steps.map(({ title, required, completed }, index) => (
