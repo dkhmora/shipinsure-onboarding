@@ -63,13 +63,17 @@ p {
   margin-bottom: 50px;
 }
 
-.text-input-container {
+.main-text-input-container {
   display: block;
   width: 100%;
   height: 89px;
   flex-shrink: 0;
   text-align: left;
   margin-bottom: 10px;
+}
+
+.text-input-container {
+  position: relative;
 }
 
 .text-input-label {
@@ -107,6 +111,27 @@ p {
   font-weight: 700;
   line-height: 20px; /* 117.647% */
   letter-spacing: 0.15px;
+}
+
+.text-input-update-button {
+  position: absolute;
+  padding-left: 20px;
+  padding-right: 20px;
+  right: 0px;
+  bottom: 16px;
+  border-width: 0px;
+}
+
+.update-button-text {
+  color: var(--Calming-Breeze-Tint2, #a3acff);
+
+  /* Open Sans/Btn 2 */
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px; /* 114.286% */
+  letter-spacing: 0.25px;
 }
 
 .required-asterisk {

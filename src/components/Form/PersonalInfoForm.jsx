@@ -1,9 +1,12 @@
 import React from "react";
 import "./Container.css";
 import TextInput from "./TextInput";
-import ReviewSection from "./ReviewSection";
 
 export default function PersonalInfoForm() {
+  const handleClickUpdate = (e, label) => {
+    console.log(e);
+  };
+
   return (
     <section class="form-container">
       <h1 className="form-title-text">Welcome, {"{NAME}"}!</h1>
@@ -18,9 +21,17 @@ export default function PersonalInfoForm() {
 
           <TextInput label="Full Name" required />
 
-          <TextInput label="Email address" required />
+          <TextInput
+            label="Email address"
+            required
+            onClickUpdate={handleClickUpdate}
+          />
 
-          <TextInput label="Store URL" required />
+          <TextInput
+            label="Store URL"
+            required
+            onClickUpdate={handleClickUpdate}
+          />
         </section>
 
         <button className="main-button">Confirm</button>
