@@ -58,6 +58,7 @@ p {
   height: 89px;
   flex-shrink: 0;
   text-align: left;
+  margin-bottom: 10px;
 }
 
 .text-input-label {
@@ -84,4 +85,16 @@ p {
   flex-shrink: 0;
   border-radius: 8px;
   border-width: 0px;
+}
+
+.required-asterisk {
+  color: var(--utility-purple, #6675ff);
+
+  /* Body 2 */
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.25px;
 }
