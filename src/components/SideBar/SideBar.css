@@ -12,9 +12,40 @@
   box-shadow: 0px 20px 24px -4px rgba(0, 0, 0, 0.08);
 }
 
-.sidebar-header-image {
+.sidebar-header-container {
+  position: relative;
   width: 350px;
   height: 139px;
+}
+
+.sidebar-header-image {
   right: 0px;
   top: 0px;
+}
+
+.sidebar-header-text-overlay {
+  position: absolute;
+  left: 32px;
+  bottom: 27px;
+  align-items: start;
+}
+
+.sidebar-header-text {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 4px;
+}
+
+.sidebar-header-sub-text {
+  color: #fff;
+  font-family: "Open Sans";
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: left;
 }
