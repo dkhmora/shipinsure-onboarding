@@ -10,7 +10,9 @@
     display: flex;
     flex: 1;
     flex-direction: row;
+    height: 100%;
     text-align: center;
+    overflow: hidden;
   }
 }
 

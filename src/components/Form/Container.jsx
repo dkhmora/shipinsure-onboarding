@@ -56,7 +56,11 @@ export default function Container({ steps, onSubmit }) {
       {transitions(
         (style, item, key) =>
           item && (
-            <animated.div key={key} style={style}>
+            <animated.div
+              key={key}
+              style={style}
+              className="form-animated-container"
+            >
               <div
                 style={{
                   display: "flex",
