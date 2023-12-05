@@ -3,12 +3,13 @@ import RectangleIcon from "../../assets/icons/Rectangle.svg";
 import RectangleCheckIcon from "../../assets/icons/RectangleCheck.svg";
 import "./Form.css";
 
-export default function SelectItem({ value, selected }) {
+export default function SelectItem({ value, index, selected, onClick }) {
   return (
     <div
       className={`select-item-container ${
         selected ? "select-item-selected" : ""
       }`}
+      onClick={() => onClick(index)}
     >
       {selected ? (
         <img

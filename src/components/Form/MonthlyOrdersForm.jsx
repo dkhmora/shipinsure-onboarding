@@ -36,6 +36,7 @@ export default function MonthlyOrdersForm() {
           <Select
             items={numberOfOrdersSelection}
             selectedIndex={selectedIndex}
+            onClick={handleInputChange}
           />
         </section>
 
