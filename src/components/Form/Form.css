@@ -466,3 +466,9 @@ p {
   padding-left: 20px;
   padding-right: 20px;
 }
+
+.question-button {
+  border-width: 0px;
+  cursor: pointer;
+  background-color: #fff;
+}

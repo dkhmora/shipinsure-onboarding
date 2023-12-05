@@ -67,6 +67,12 @@ export default function BillingForm({ stepTitle, onSubmit, onClickGoBack }) {
     console.log("Plaid is clicked");
   };
 
+  const handleClickQuestion = (e) => {
+    e.preventDefault();
+
+    console.log("Question is clicked!");
+  };
+
   const handleClickGoBack = (e) => {
     e.preventDefault();
 
@@ -115,7 +121,10 @@ export default function BillingForm({ stepTitle, onSubmit, onClickGoBack }) {
           <h1 className="form-title-text">
             ShipInsure is free, here is how it works
           </h1>
-          <img src={QuestionIcon} className="question-icon" alt="question" />
+
+          <button className="question-button" onClick={handleClickQuestion}>
+            <img src={QuestionIcon} className="question-icon" alt="question" />
+          </button>
         </div>
 
         <p className="form-subtitle-text">
