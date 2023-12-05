@@ -59,6 +59,11 @@
   gap: 40px;
 }
 
+.step-text-container {
+  display: flex;
+  align-items: center;
+}
+
 .default-step-text {
   color: var(--neutral-midnight-2, rgba(6, 0, 30, 0.75));
 
@@ -69,6 +74,7 @@
   font-weight: 400;
   line-height: 20px; /* 142.857% */
   letter-spacing: 0.25px;
+  margin-left: 16px;
 }
 
 .selected-step-text {
@@ -81,4 +87,10 @@
   font-weight: 700;
   line-height: 16px; /* 100% */
   letter-spacing: 0.25px;
+  margin-left: 16px;
+}
+
+.step-icon {
+  width: 16px;
+  height: 16px;
 }
