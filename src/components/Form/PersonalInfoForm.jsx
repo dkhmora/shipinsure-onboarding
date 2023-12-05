@@ -1,6 +1,7 @@
 import React from "react";
 import "./Container.css";
 import TextInput from "./TextInput";
+import ReviewSection from "./ReviewSection";
 
 export default function PersonalInfoForm() {
   return (
@@ -11,8 +12,8 @@ export default function PersonalInfoForm() {
         Let's make this easy--Please verify the information below is correct.
       </p>
 
-      <section>
-        <section className="form-inputs-container">
+      <section className="form-inputs-container">
+        <section className="form-inputs-section">
           <TextInput label="Store Name" required />
 
           <TextInput label="Full Name" required />
@@ -24,6 +25,8 @@ export default function PersonalInfoForm() {
 
         <button className="main-button">Confirm</button>
       </section>
+
+      <ReviewSection />
     </section>
   );
 }
