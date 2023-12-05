@@ -1,57 +1,22 @@
 import React, { useState } from "react";
-import TextInput from "./TextInput";
 import "./Form.css";
 import Select from "./Select";
+import { numberOfOrdersSelection } from "../../constants";
 
 export default function MonthlyOrdersForm() {
-  const [formData, setFormData] = useState({
-    storeName: "",
-    fullName: "",
-    email: "",
-    storeUrl: "",
-  });
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
-  const { storeName, fullName, email, storeUrl } = formData;
-
-  const handleClickUpdate = (e, label) => {
-    console.log(e);
-  };
-
-  const handleInputChange = (fieldName, value) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      [fieldName]: value,
-    }));
+  const handleInputChange = (value) => {
+    setSelectedIndex(() => value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    console.log("Form submitted:", numberOfOrdersSelection[selectedIndex]);
   };
 
   const validateForm = () => {
-    const errors = {};
-
-    // Basic required validation
-    if (!storeName.trim()) {
-      errors.storeName = "Store Name is required";
-    }
-
-    if (!fullName.trim()) {
-      errors.fullName = "Full Name is required";
-    }
-
-    if (!email.trim()) {
-      errors.email = "Email is required";
-    } else if (!email.includes("@")) {
-      errors.email = "Invalid email format";
-    }
-
-    if (!storeUrl.trim()) {
-      errors.storeUrl = "Store URL is required";
-    }
-
-    return errors;
+    return {};
   };
 
   const errors = validateForm();
@@ -68,7 +33,10 @@ export default function MonthlyOrdersForm() {
 
       <form className="form-inputs-container" onSubmit={handleSubmit}>
         <section className="form-inputs-section">
-          <Select />
+          <Select
+            items={numberOfOrdersSelection}
+            selectedIndex={selectedIndex}
+          />
         </section>
 
         <button
