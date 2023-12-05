@@ -7,8 +7,8 @@ export default function HelpButton() {
   };
 
   return (
-    <div class="help-button" onClick={handleClick}>
+    <p className="help-button" onClick={handleClick}>
       Need help?
-    </div>
+    </p>
   );
 }

@@ -10,9 +10,9 @@ export default function SideBarHeader() {
       </div>
 
       <div className="sidebar-header-text-overlay">
-        <div className="sidebar-header-text">Onboarding</div>
+        <h1 className="sidebar-header-text">Onboarding</h1>
 
-        <div className="sidebar-header-sub-text">0/3 steps complete!</div>
+        <p className="sidebar-header-sub-text">0/3 steps complete!</p>
       </div>
     </div>
   );

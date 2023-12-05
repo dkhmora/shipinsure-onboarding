@@ -5,18 +5,18 @@ import { onboardingSteps } from "../../constants";
 
 export default function Steps() {
   return (
-    <div class="steps-container">
+    <div className="steps-container">
       {onboardingSteps.map(({ title, required, completed }, index) => (
-        <div class="step-text-container">
+        <div className="step-text-container">
           {completed ? (
-            <img src={CheckIcon} class="step-icon" alt="radio" />
+            <img src={CheckIcon} className="step-icon" alt="radio" />
           ) : (
-            <img src={RadioIcon} class="step-icon" alt="radio" />
+            <img src={RadioIcon} className="step-icon" alt="radio" />
           )}
 
-          <div class="default-step-text">{title}</div>
+          <p className="default-step-text">{title}</p>
 
-          {required ? <div class="required-step-text">Required</div> : null}
+          {required ? <p className="required-step-text">Required</p> : null}
         </div>
       ))}
     </div>

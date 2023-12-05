@@ -1,8 +1,44 @@
+h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+
 .form-container {
   display: flex;
   flex: 1;
   justify-content: center;
-  padding-left: 25%;
-  padding-right: 25%;
+  padding-left: 15%;
+  padding-right: 15%;
   padding-top: 78px;
+}
+
+.form-title-text {
+  color: var(--Slate, #3d5781);
+  text-align: center;
+
+  /* H4 | Montserrat */
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px; /* 116.667% */
+  letter-spacing: 0.18px;
+  margin-bottom: 20px;
+}
+
+.form-subtitle-text {
+  width: 541px;
+  height: 23px;
+  flex-shrink: 0;
+  color: var(--neutral-midnight-2, rgba(6, 0, 30, 0.75));
+  text-align: center;
+
+  /* Open Sans/Body 1 */
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.25px;
 }
