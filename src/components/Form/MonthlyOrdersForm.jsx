@@ -12,7 +12,9 @@ export default function MonthlyOrdersForm({ stepTitle, onSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(stepTitle, numberOfOrdersSelection[selectedIndex]);
+    onSubmit(stepTitle, {
+      monthlyOrders: numberOfOrdersSelection[selectedIndex],
+    });
   };
 
   const validateForm = () => {

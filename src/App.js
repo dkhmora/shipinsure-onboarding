@@ -8,6 +8,20 @@ import Header from "./components/NavBar/Header";
 function App() {
   const [steps, setSteps] = useState(onboardingSteps);
   const [windowDimension, setWindowDimension] = useState(null);
+  const [finalFormData, setFinalFormData] = useState({
+    storeName: "",
+    fullName: "",
+    email: "",
+    storeUrl: "",
+    monthlyOrders: "",
+    billingDetails: {
+      cardNumber: "",
+      expiration: "",
+      cvc: "",
+      country: "",
+      zipCode: "",
+    },
+  });
 
   useEffect(() => {
     setWindowDimension(window.innerWidth);
@@ -34,7 +48,13 @@ function App() {
 
       return curr;
     });
+
+    setFinalFormData((prevVal) => ({ ...prevVal, ...formData }));
   };
+
+  useEffect(() => {
+    console.log(finalFormData);
+  }, [finalFormData]);
 
   return (
     <div className="App">

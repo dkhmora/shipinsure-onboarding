@@ -7,19 +7,22 @@ import QuestionIcon from "../../assets/icons/Question.svg";
 
 export default function BillingForm({ stepTitle, onSubmit }) {
   const [formData, setFormData] = useState({
-    cardNumber: "",
-    expiration: "",
-    cvc: "",
-    country: "",
-    zipCode: "",
+    billingDetails: {
+      cardNumber: "",
+      expiration: "",
+      cvc: "",
+      country: "",
+      zipCode: "",
+    },
   });
 
-  const { cardNumber, expiration, cvc, country, zipCode } = formData;
+  const {
+    billingDetails: { cardNumber, expiration, cvc, country, zipCode },
+  } = formData;
 
   const handleInputChange = (fieldName, value) => {
     setFormData((prevData) => ({
-      ...prevData,
-      [fieldName]: value,
+      billingDetails: { ...prevData.billingDetails, [fieldName]: value },
     }));
   };
 
