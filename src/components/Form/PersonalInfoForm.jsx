@@ -29,23 +29,32 @@ export default function PersonalInfoForm() {
   };
 
   const validateForm = () => {
+    const errors = {};
+
     // Basic required validation
-    if (
-      !storeName.trim() ||
-      !fullName.trim() ||
-      !email.trim() ||
-      !storeUrl.trim()
-    ) {
-      return false;
+    if (!storeName.trim()) {
+      errors.storeName = "Store Name is required";
     }
 
-    // Simple email validation
-    if (!email.includes("@")) {
-      return false;
+    if (!fullName.trim()) {
+      errors.fullName = "Full Name is required";
     }
 
-    return true;
+    if (!email.trim()) {
+      errors.email = "Email is required";
+    } else if (!email.includes("@")) {
+      errors.email = "Invalid email format";
+    }
+
+    if (!storeUrl.trim()) {
+      errors.storeUrl = "Store URL is required";
+    }
+
+    return errors;
   };
+
+  const errors = validateForm();
+  const formValid = Object.keys(errors).length === 0;
 
   return (
     <section class="form-container">
@@ -63,6 +72,7 @@ export default function PersonalInfoForm() {
             onChange={(value) => handleInputChange("storeName", value)}
             required
             textInputClassName="grey-text-input"
+            hasError={errors.email}
           />
 
           <TextInput
@@ -71,6 +81,7 @@ export default function PersonalInfoForm() {
             onChange={(value) => handleInputChange("fullName", value)}
             required
             textInputClassName="grey-text-input"
+            hasError={errors.fullName}
           />
 
           <TextInput
@@ -80,6 +91,7 @@ export default function PersonalInfoForm() {
             required
             textInputClassName="text-input"
             onClickUpdate={handleClickUpdate}
+            hasError={errors.email}
           />
 
           <TextInput
@@ -89,15 +101,16 @@ export default function PersonalInfoForm() {
             required
             textInputClassName="text-input"
             onClickUpdate={handleClickUpdate}
+            hasError={errors.storeUrl}
           />
         </section>
 
         <button
           className={`form-submit-button ${
-            !validateForm() ? "disabled-form-submit-button" : ""
+            !formValid ? "disabled-form-submit-button" : ""
           }`}
           type="submit"
-          disabled={!validateForm()}
+          disabled={formValid}
         >
           Confirm
         </button>

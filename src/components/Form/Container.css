@@ -147,7 +147,7 @@ p {
 }
 
 .update-button-text {
-  color: var(--Calming-Breeze-Tint2, #a3acff);
+  color: var(--utility-purple, #6675ff);
 
   /* Open Sans/Btn 2 */
   font-family: Open Sans;
@@ -158,12 +158,16 @@ p {
   letter-spacing: 0.25px;
 }
 
+.disabled-update-button-text {
+  opacity: 0.5;
+}
+
 .update-button-text:hover {
   color: var(--utility-purple-hover, #545ce8);
 }
 
 .update-button-text:active {
-  color: var(--utility-purple, #a3acff);
+  color: var(--utility-purple, #6675ff);
   opacity: 0.5; /* Adjust the opacity value as needed */
 }
 

@@ -9,6 +9,7 @@ export default function TextInput({
   required,
   onClickUpdate,
   textInputClassName,
+  hasError,
 }) {
   return (
     <section className="main-text-input-container">
@@ -28,7 +29,10 @@ export default function TextInput({
 
         {onClickUpdate ? (
           <button
-            className="text-input-update-button"
+            className={`text-input-update-button ${
+              hasError ? "disabled-update-button-text" : ""
+            }`}
+            disabled={hasError}
             onClick={(e) => onClickUpdate(e, label)}
           >
             <span className="update-button-text">update</span>
