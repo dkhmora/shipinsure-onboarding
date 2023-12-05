@@ -25,8 +25,6 @@ export default function PersonalInfoForm() {
 
         <button className="main-button">Confirm</button>
       </section>
-
-      <ReviewSection />
     </section>
   );
 }

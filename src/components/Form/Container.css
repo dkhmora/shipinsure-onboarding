@@ -7,7 +7,8 @@ p {
 .main-container {
   display: flex;
   flex: 1;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding-left: 17%;
   padding-right: 17%;
   padding-top: 78px;
@@ -15,10 +16,10 @@ p {
 
 .form-container {
   display: flex;
-  flex: 1;
   flex-direction: column;
   justify-content: top;
   align-items: center;
+  margin-bottom: 100px;
 }
 
 .form-title-text {
@@ -53,7 +54,6 @@ p {
 
 .form-inputs-container {
   margin-top: 40px;
-  margin-bottom: 100px;
 }
 
 .form-inputs-section {
