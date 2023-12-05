@@ -3,6 +3,7 @@ import "./Form.css";
 import PersonalInfoForm from "./PersonalInfoForm";
 import ReviewSection from "./ReviewSection";
 import MonthlyOrdersForm from "./MonthlyOrdersForm";
+import BillingForm from "./BillingForm";
 
 export default function Container({ steps }) {
   const renderForm = () => {
@@ -15,7 +16,7 @@ export default function Container({ steps }) {
       case "Monthly Orders":
         return <MonthlyOrdersForm />;
       case "Billing":
-        return <PersonalInfoForm />;
+        return <BillingForm />;
       default:
         return <div>Error: Invalid User Role</div>;
     }
