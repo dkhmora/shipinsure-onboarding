@@ -387,6 +387,15 @@ p {
   border-radius: 31px;
   border: 1px solid var(--Midnight, #06001e);
   background: var(--Purely-Heaven, #f4f4f9);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--Purely-Heaven, #06001e11);
+  }
+
+  &:active {
+    background: var(--Purely-Heaven, #06001e36);
+  }
 }
 
 .plaid-logo {
