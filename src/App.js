@@ -1,5 +1,5 @@
 import "./App.css";
-import SideBar from "./components/SideBar/SideBar";
+import SideBar from "./components/NavBar/SideBar";
 import FormContainer from "./components/Form/Container";
 import { useState } from "react";
 import { onboardingSteps } from "./constants";
