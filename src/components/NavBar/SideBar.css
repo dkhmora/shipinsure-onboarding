@@ -28,6 +28,8 @@ p {
   top: 0;
   left: 0;
   height: 100px;
+  overflow: hidden;
+  z-index: 99999;
 }
 
 .sidebar-header-image {
