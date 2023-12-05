@@ -1,5 +1,6 @@
 .sidebar-container {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 350px;
   height: 100vh;
@@ -106,4 +107,23 @@
 .step-icon {
   width: 16px;
   height: 16px;
+}
+
+.help-button {
+  color: var(--Midnight, #06001e);
+
+  /* Open Sans/Btn 1 */
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px; /* 100% */
+  letter-spacing: 0.25px;
+  position: absolute;
+  bottom: 30px;
+  left: 23px;
+}
+
+.help-button:hover {
+  cursor: pointer;
 }
