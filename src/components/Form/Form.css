@@ -20,6 +20,12 @@ p {
   width: 100%;
 }
 
+.multi-column-input-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
 @media (min-width: 1024px) {
   .main-container {
     display: flex;
@@ -34,6 +40,12 @@ p {
   .form-inputs-container {
     width: 70%;
     max-width: 550px;
+  }
+
+  .multi-column-input-container {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
   }
 }
 
@@ -368,12 +380,6 @@ p {
   height: 16px;
   flex-shrink: 0;
   margin-left: 10px;
-}
-
-.multi-column-input-container {
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
 }
 
 .question-icon {
