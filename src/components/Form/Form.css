@@ -9,9 +9,32 @@ p {
   flex: 1;
   flex-direction: column;
   align-items: center;
-  padding-left: 17%;
-  padding-right: 17%;
-  padding-top: 78px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 26px;
+  padding-bottom: 100px;
+}
+
+.form-inputs-container {
+  margin-top: 40px;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .main-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 17%;
+    padding-right: 17%;
+    padding-top: 78px;
+  }
+
+  .form-inputs-container {
+    width: 70%;
+    max-width: 550px;
+  }
 }
 
 .form-container {
@@ -57,12 +80,6 @@ p {
   font-weight: 400;
   line-height: 24px; /* 150% */
   letter-spacing: 0.25px;
-}
-
-.form-inputs-container {
-  margin-top: 40px;
-  width: 70%;
-  max-width: 550px;
 }
 
 .form-inputs-section {
