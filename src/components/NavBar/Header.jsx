@@ -7,8 +7,8 @@ export default function SideBarHeader({ steps }) {
 
   return (
     <div className="sidebar-header-container">
-      <div className="sidebar-header-image">
-        <img src={SideBarHeaderImage} alt="sidebar-header" />
+      <div className="sidebar-header-image-container">
+        <img src={SideBarHeaderImage} className="sidebar-header-image" alt="sidebar-header" />
       </div>
 
       <div className="sidebar-header-text-overlay">
