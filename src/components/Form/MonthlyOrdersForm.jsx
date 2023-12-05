@@ -23,12 +23,14 @@ export default function MonthlyOrdersForm({ stepTitle, onSubmit }) {
 
   return (
     <section className="form-container">
-      <h1 className="form-title-text">Tell us a bit about your store!</h1>
+      <div className="form-title-description-container">
+        <h1 className="form-title-text">Tell us a bit about your store!</h1>
 
-      <p className="form-subtitle-text">
-        We’d love to hear more about your Shopify experience. On average, how
-        many orders do you typically receive each month?
-      </p>
+        <p className="form-subtitle-text">
+          We’d love to hear more about your Shopify experience. On average, how
+          many orders do you typically receive each month?
+        </p>
+      </div>
 
       <form className="form-inputs-container" onSubmit={handleSubmit}>
         <section className="form-inputs-section">

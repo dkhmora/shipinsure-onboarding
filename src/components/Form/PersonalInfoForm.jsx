@@ -60,11 +60,13 @@ export default function PersonalInfoForm({ stepTitle, onSubmit }) {
 
   return (
     <section className="form-container">
-      <h1 className="form-title-text">Welcome, {"{NAME}"}!</h1>
+      <div className="form-title-description-container">
+        <h1 className="form-title-text">Welcome, {"{NAME}"}!</h1>
 
-      <p className="form-subtitle-text">
-        Let's make this easy--Please verify the information below is correct.
-      </p>
+        <p className="form-subtitle-text">
+          Let's make this easy--Please verify the information below is correct.
+        </p>
+      </div>
 
       <form className="form-inputs-container" onSubmit={handleSubmit}>
         <section className="form-inputs-section">

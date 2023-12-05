@@ -98,19 +98,21 @@ export default function BillingForm({ stepTitle, onSubmit }) {
 
   return (
     <section className="form-container">
-      <div className="form-title-container">
-        <h1 className="form-title-text">
-          ShipInsure is free, here is how it works
-        </h1>
-        <img src={QuestionIcon} className="question-icon" alt="question" />
-      </div>
+      <div className="form-title-description-container">
+        <div className="form-title-container">
+          <h1 className="form-title-text">
+            ShipInsure is free, here is how it works
+          </h1>
+          <img src={QuestionIcon} className="question-icon" alt="question" />
+        </div>
 
-      <p className="form-subtitle-text">
-        In order to pay claims, ShipInsure refunds the customer directly or
-        completes repurchases from your store. As our widget collects premiums
-        from customers during checkout, your billing info is needed for
-        ShipInsure to collect those premiums every month.
-      </p>
+        <p className="form-subtitle-text">
+          In order to pay claims, ShipInsure refunds the customer directly or
+          completes repurchases from your store. As our widget collects premiums
+          from customers during checkout, your billing info is needed for
+          ShipInsure to collect those premiums every month.
+        </p>
+      </div>
 
       <form className="form-inputs-container" onSubmit={handleSubmit}>
         <section className="form-inputs-section">
