@@ -1,5 +1,10 @@
 import React from "react";
+import ReviewStars from "./ReviewStars";
 
 export default function ReviewSection() {
-  return <div>ReviewSection</div>;
+  return (
+    <section>
+      <ReviewStars />
+    </section>
+  );
 }

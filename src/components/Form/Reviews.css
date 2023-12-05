@@ -1,0 +1,7 @@
+.star-icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  margin-left: 15px;
+  margin-right: 15px;
+}
