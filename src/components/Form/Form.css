@@ -111,6 +111,18 @@ p {
   letter-spacing: 0.15px;
 }
 
+.text-input::placeholder {
+  color: var(--surface-level-6, #06001e1f);
+
+  /* H6 */
+  font-family: Open Sans;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 117.647% */
+  letter-spacing: 0.15px;
+}
+
 .grey-text-input {
   background-color: #06001e0d;
   width: calc(100% - 32px);
