@@ -7,7 +7,7 @@ import HelpButton from "./HelpButton";
 export default function SideBar({ steps }) {
   return (
     <div className="sidebar-container">
-      <Header />
+      <Header steps={steps} />
       <Steps steps={steps} />
       <HelpButton />
     </div>
