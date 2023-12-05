@@ -16,29 +16,37 @@ export default function BillingForm({ stepTitle, onSubmit }) {
     },
   });
 
-  const handleCardNumberChange = (fieldName, value) => {
-    // Remove non-digit characters
+  const handleCardNumberChange = (fieldName, value, maxLength) => {
     const input = value.replace(/\D/g, "");
 
-    // Add spaces after every four digits
-    const formattedInput = input.replace(/(\d{4})(?=\d)/g, "$1 ");
+    if (!maxLength || input.length <= maxLength) {
+      const formattedInput = input.replace(/(\d{4})(?=\d)/g, "$1 ");
 
-    setFormData((prevData) => ({
-      billingDetails: {
-        ...prevData.billingDetails,
-        [fieldName]: formattedInput,
-      },
-    }));
+      setFormData((prevData) => ({
+        billingDetails: {
+          ...prevData.billingDetails,
+          [fieldName]: formattedInput,
+        },
+      }));
+    }
   };
 
   const {
     billingDetails: { cardNumber, expiration, cvc, country, zipCode },
   } = formData;
 
-  const handleInputChange = (fieldName, value) => {
-    setFormData((prevData) => ({
-      billingDetails: { ...prevData.billingDetails, [fieldName]: value },
-    }));
+  const handleInputChange = (fieldName, value, type, maxLength) => {
+    let input = value;
+
+    if (!maxLength || input.length <= maxLength) {
+      if (type === "number") {
+        input = value.replace(/\D/g, "");
+      }
+
+      setFormData((prevData) => ({
+        billingDetails: { ...prevData.billingDetails, [fieldName]: input },
+      }));
+    }
   };
 
   const handleSubmit = (e) => {
@@ -52,6 +60,10 @@ export default function BillingForm({ stepTitle, onSubmit }) {
     // Basic required validation
     if (!cardNumber.trim()) {
       errors.cardNumber = "Card Number is required";
+    }
+
+    if (cardNumber.length > 16) {
+      errors.cardNumber = "Card Number is supposed to be 16 characters";
     }
 
     if (!expiration.trim()) {
@@ -98,7 +110,9 @@ export default function BillingForm({ stepTitle, onSubmit }) {
             label="Card Number"
             value={cardNumber}
             placeholder="1111 2222 3333 4444"
-            onChange={(value) => handleCardNumberChange("cardNumber", value)}
+            onChange={(value) =>
+              handleCardNumberChange("cardNumber", value, 16)
+            }
             textInputClassName="text-input"
             hasError={errors.email}
             postpend={<PaymentMethodIcons />}
@@ -118,7 +132,7 @@ export default function BillingForm({ stepTitle, onSubmit }) {
               label="CVC"
               value={cvc}
               placeholder="123"
-              onChange={(value) => handleInputChange("cvc", value)}
+              onChange={(value) => handleInputChange("cvc", value, "number", 3)}
               required
               textInputClassName="text-input"
               hasError={errors.email}
@@ -141,7 +155,9 @@ export default function BillingForm({ stepTitle, onSubmit }) {
               label="Zip Code"
               value={zipCode}
               placeholder="123456"
-              onChange={(value) => handleInputChange("zipCode", value)}
+              onChange={(value) =>
+                handleInputChange("zipCode", value, "number", 6)
+              }
               required
               textInputClassName="text-input"
               hasError={errors.email}
