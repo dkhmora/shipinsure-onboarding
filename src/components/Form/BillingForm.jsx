@@ -80,7 +80,7 @@ export default function BillingForm({ stepTitle, onSubmit }) {
             label="Card Number"
             value={cardNumber}
             placeholder="1111 2222 3333 4444"
-            onChange={(value) => handleInputChange("storeName", value)}
+            onChange={(value) => handleInputChange("cardNumber", value)}
             textInputClassName="text-input"
             hasError={errors.email}
             postpend={<PaymentMethodIcons />}
@@ -91,7 +91,7 @@ export default function BillingForm({ stepTitle, onSubmit }) {
               label="Expiration"
               value={expiration}
               placeholder="MM/YY"
-              onChange={(value) => handleInputChange("storeName", value)}
+              onChange={(value) => handleInputChange("expiration", value)}
               textInputClassName="text-input"
               hasError={errors.email}
               style={{ flexShrink: 1 }}
@@ -100,7 +100,7 @@ export default function BillingForm({ stepTitle, onSubmit }) {
               label="CVC"
               value={cvc}
               placeholder="123"
-              onChange={(value) => handleInputChange("storeName", value)}
+              onChange={(value) => handleInputChange("cvc", value)}
               required
               textInputClassName="text-input"
               hasError={errors.email}
@@ -113,7 +113,7 @@ export default function BillingForm({ stepTitle, onSubmit }) {
               label="Country"
               value={country}
               placeholder="USA"
-              onChange={(value) => handleInputChange("storeName", value)}
+              onChange={(value) => handleInputChange("country", value)}
               required
               textInputClassName="text-input"
               hasError={errors.email}
@@ -123,7 +123,7 @@ export default function BillingForm({ stepTitle, onSubmit }) {
               label="Zip Code"
               value={zipCode}
               placeholder="123456"
-              onChange={(value) => handleInputChange("storeName", value)}
+              onChange={(value) => handleInputChange("zipCode", value)}
               required
               textInputClassName="text-input"
               hasError={errors.email}
@@ -137,7 +137,7 @@ export default function BillingForm({ stepTitle, onSubmit }) {
             !formValid ? "disabled-form-submit-button" : ""
           }`}
           type="submit"
-          disabled={formValid}
+          disabled={!formValid}
         >
           Next
         </button>
