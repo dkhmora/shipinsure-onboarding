@@ -12,13 +12,17 @@ export default function PersonalInfoForm() {
       </p>
 
       <section>
-        <TextInput label="Store Name" required />
+        <section className="form-inputs-container">
+          <TextInput label="Store Name" required />
 
-        <TextInput label="Full Name" required />
+          <TextInput label="Full Name" required />
 
-        <TextInput label="Email address" required />
+          <TextInput label="Email address" required />
 
-        <TextInput label="Store URL" required />
+          <TextInput label="Store URL" required />
+        </section>
+
+        <button className="main-button">Confirm</button>
       </section>
     </section>
   );
