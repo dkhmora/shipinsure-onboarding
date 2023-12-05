@@ -248,3 +248,11 @@ p {
   font-weight: 600;
   line-height: 25px; /* 178.571% */
 }
+
+.select-item-container:hover {
+  border: 1px solid var(--Calming-Breeze, #6675ff80);
+}
+
+.select-item-selected {
+  border: 1px solid var(--Calming-Breeze, #6675ff);
+}

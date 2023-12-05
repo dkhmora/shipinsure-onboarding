@@ -5,7 +5,7 @@ import "./Form.css";
 export default function Select() {
   return (
     <div>
-      <SelectItem value="1 - 500" />
+      <SelectItem value="1 - 500" selected />
     </div>
   );
 }
