@@ -115,8 +115,9 @@ p {
 
 .text-input-update-button {
   position: absolute;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 0;
+  margin-left: 20px;
+  margin-right: 20px;
   right: 0px;
   bottom: 16px;
   border-width: 0px;
