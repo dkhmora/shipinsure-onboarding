@@ -4,7 +4,7 @@ import "./Reviews.css";
 
 export default function ReviewSection() {
   return (
-    <section>
+    <section className="review-container">
       <ReviewStars />
 
       <p className="review-text">
