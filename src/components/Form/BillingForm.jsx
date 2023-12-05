@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PlaidIcon from "../../assets/icons/PlaidLogo.svg";
 import "./Form.css";
 
 export default function BillingForm() {
@@ -35,6 +36,12 @@ export default function BillingForm() {
           disabled={!validateForm()}
         >
           Next
+        </button>
+
+        <p className="or-text">or</p>
+
+        <button className="plaid-button" onClick={() => {}}>
+          <img src={PlaidIcon} className="plaid-icon" alt="plaid-logo" />
         </button>
       </form>
     </section>
