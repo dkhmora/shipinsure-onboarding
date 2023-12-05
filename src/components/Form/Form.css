@@ -220,3 +220,32 @@ p {
   background: var(--utility-purple, #6675ff);
   opacity: 0.5; /* Adjust the opacity value as needed */
 }
+
+.select-item-container {
+  display: flex;
+  padding: 10px 16px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+}
+
+.select-item-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.select-item-text {
+  color: #1a1a1a;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 25px; /* 178.571% */
+}

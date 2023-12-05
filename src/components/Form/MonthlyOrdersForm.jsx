@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TextInput from "./TextInput";
 import "./Form.css";
+import Select from "./Select";
 
 export default function MonthlyOrdersForm() {
   const [formData, setFormData] = useState({
@@ -66,7 +67,9 @@ export default function MonthlyOrdersForm() {
       </p>
 
       <form className="form-inputs-container" onSubmit={handleSubmit}>
-        <section className="form-inputs-section"></section>
+        <section className="form-inputs-section">
+          <Select />
+        </section>
 
         <button
           className={`form-submit-button ${
