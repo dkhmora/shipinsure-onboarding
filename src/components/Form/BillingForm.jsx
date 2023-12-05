@@ -16,6 +16,21 @@ export default function BillingForm({ stepTitle, onSubmit }) {
     },
   });
 
+  const handleCardNumberChange = (fieldName, value) => {
+    // Remove non-digit characters
+    const input = value.replace(/\D/g, "");
+
+    // Add spaces after every four digits
+    const formattedInput = input.replace(/(\d{4})(?=\d)/g, "$1 ");
+
+    setFormData((prevData) => ({
+      billingDetails: {
+        ...prevData.billingDetails,
+        [fieldName]: formattedInput,
+      },
+    }));
+  };
+
   const {
     billingDetails: { cardNumber, expiration, cvc, country, zipCode },
   } = formData;
@@ -83,7 +98,7 @@ export default function BillingForm({ stepTitle, onSubmit }) {
             label="Card Number"
             value={cardNumber}
             placeholder="1111 2222 3333 4444"
-            onChange={(value) => handleInputChange("cardNumber", value)}
+            onChange={(value) => handleCardNumberChange("cardNumber", value)}
             textInputClassName="text-input"
             hasError={errors.email}
             postpend={<PaymentMethodIcons />}
