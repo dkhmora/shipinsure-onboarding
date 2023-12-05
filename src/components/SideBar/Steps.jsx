@@ -6,7 +6,7 @@ export default function Steps({ steps, selectedStepTitle }) {
   return (
     <div className="steps-container">
       {steps.map(({ title, required, completed }, index) => (
-        <div className="step-text-container">
+        <div className="step-text-container" key={title}>
           {completed ? (
             <img src={CheckIcon} className="step-icon" alt="radio" />
           ) : (
