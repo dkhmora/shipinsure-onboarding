@@ -38,8 +38,7 @@ p {
 }
 
 .form-subtitle-text {
-  width: 541px;
-  height: 23px;
+  width: 90%;
   flex-shrink: 0;
   color: var(--Midnight, #06001e);
   text-align: center;
