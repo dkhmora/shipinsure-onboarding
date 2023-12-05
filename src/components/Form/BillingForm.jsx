@@ -43,6 +43,10 @@ export default function BillingForm() {
         <button className="plaid-button" onClick={() => {}}>
           <img src={PlaidIcon} className="plaid-icon" alt="plaid-logo" />
         </button>
+
+        <button className="go-back-button" onClick={(e) => {}}>
+          <span className="go-back-text">Go Back</span>
+        </button>
       </form>
     </section>
   );

@@ -290,3 +290,22 @@ p {
   height: 33.6px;
   flex-shrink: 0;
 }
+
+.go-back-button {
+  border-width: 0px;
+  cursor: pointer;
+  background-color: #fff;
+  margin-top: 30px;
+}
+
+.go-back-text {
+  color: var(--Midnight, #06001e);
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px; /* 100% */
+  letter-spacing: 0.25px;
+  text-decoration-line: underline;
+  cursor: pointer;
+}
