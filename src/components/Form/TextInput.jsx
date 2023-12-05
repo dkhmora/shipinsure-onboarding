@@ -4,6 +4,7 @@ import "./Form.css";
 export default function TextInput({
   label,
   value,
+  name,
   onChange,
   placeholder,
   required,
@@ -23,6 +24,7 @@ export default function TextInput({
       <div className="text-input-container">
         <input
           type="text"
+          name={name}
           className={textInputClassName}
           value={value}
           onChange={(e) => onChange(e.target.value)}

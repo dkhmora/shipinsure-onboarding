@@ -60,17 +60,20 @@ export default function PersonalInfoForm({ stepTitle, onSubmit }) {
 
   return (
     <section className="form-container">
-      <h1 className="form-title-text">Welcome, {"{NAME}"}!</h1>
+      <div className="form-title-description-container">
+        <h1 className="form-title-text">Welcome, {"{NAME}"}!</h1>
 
-      <p className="form-subtitle-text">
-        Let's make this easy--Please verify the information below is correct.
-      </p>
+        <p className="form-subtitle-text">
+          Let's make this easy--Please verify the information below is correct.
+        </p>
+      </div>
 
       <form className="form-inputs-container" onSubmit={handleSubmit}>
         <section className="form-inputs-section">
           <TextInput
             label="Store Name"
             value={storeName}
+            name="storeName"
             onChange={(value) => handleInputChange("storeName", value)}
             required
             textInputClassName="grey-text-input"
@@ -80,6 +83,7 @@ export default function PersonalInfoForm({ stepTitle, onSubmit }) {
           <TextInput
             label="Full Name"
             value={fullName}
+            name="fullName"
             onChange={(value) => handleInputChange("fullName", value)}
             required
             textInputClassName="grey-text-input"
@@ -89,6 +93,7 @@ export default function PersonalInfoForm({ stepTitle, onSubmit }) {
           <TextInput
             label="Email Address"
             value={email}
+            name="email"
             onChange={(value) => handleInputChange("email", value)}
             required
             textInputClassName="text-input"
@@ -99,6 +104,7 @@ export default function PersonalInfoForm({ stepTitle, onSubmit }) {
           <TextInput
             label="Store URL"
             value={storeUrl}
+            name="storeUrl"
             onChange={(value) => handleInputChange("storeUrl", value)}
             required
             textInputClassName="text-input"

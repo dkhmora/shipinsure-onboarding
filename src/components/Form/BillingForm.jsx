@@ -5,7 +5,7 @@ import TextInput from "./TextInput";
 import PaymentMethodIcons from "./PaymentMethodIcons";
 import QuestionIcon from "../../assets/icons/Question.svg";
 
-export default function BillingForm({ stepTitle, onSubmit }) {
+export default function BillingForm({ stepTitle, onSubmit, onClickGoBack }) {
   const [formData, setFormData] = useState({
     billingDetails: {
       cardNumber: "",
@@ -61,6 +61,24 @@ export default function BillingForm({ stepTitle, onSubmit }) {
     onSubmit(stepTitle, newFormData);
   };
 
+  const handleClickPlaid = (e) => {
+    e.preventDefault();
+
+    console.log("Plaid is clicked");
+  };
+
+  const handleClickQuestion = (e) => {
+    e.preventDefault();
+
+    console.log("Question is clicked!");
+  };
+
+  const handleClickGoBack = (e) => {
+    e.preventDefault();
+
+    onClickGoBack();
+  };
+
   const validateForm = () => {
     const errors = {};
 
@@ -98,25 +116,31 @@ export default function BillingForm({ stepTitle, onSubmit }) {
 
   return (
     <section className="form-container">
-      <div className="form-title-container">
-        <h1 className="form-title-text">
-          ShipInsure is free, here is how it works
-        </h1>
-        <img src={QuestionIcon} className="question-icon" alt="question" />
-      </div>
+      <div className="form-title-description-container">
+        <div className="form-title-container">
+          <h1 className="form-title-text">
+            ShipInsure is free, here is how it works
+          </h1>
 
-      <p className="form-subtitle-text">
-        In order to pay claims, ShipInsure refunds the customer directly or
-        completes repurchases from your store. As our widget collects premiums
-        from customers during checkout, your billing info is needed for
-        ShipInsure to collect those premiums every month.
-      </p>
+          <button className="question-button" onClick={handleClickQuestion}>
+            <img src={QuestionIcon} className="question-icon" alt="question" />
+          </button>
+        </div>
+
+        <p className="form-subtitle-text">
+          In order to pay claims, ShipInsure refunds the customer directly or
+          completes repurchases from your store. As our widget collects premiums
+          from customers during checkout, your billing info is needed for
+          ShipInsure to collect those premiums every month.
+        </p>
+      </div>
 
       <form className="form-inputs-container" onSubmit={handleSubmit}>
         <section className="form-inputs-section">
           <TextInput
             label="Card Number"
             value={cardNumber}
+            name="cardNumber"
             placeholder="1111 2222 3333 4444"
             onChange={(value) =>
               handleCardNumberChange("cardNumber", value, 16)
@@ -130,6 +154,7 @@ export default function BillingForm({ stepTitle, onSubmit }) {
             <TextInput
               label="Expiration"
               value={expiration}
+              name="expiration"
               placeholder="MM/YY"
               onChange={(value) => handleInputChange("expiration", value)}
               textInputClassName="text-input"
@@ -139,6 +164,7 @@ export default function BillingForm({ stepTitle, onSubmit }) {
             <TextInput
               label="CVC"
               value={cvc}
+              name="cvc"
               placeholder="123"
               onChange={(value) => handleInputChange("cvc", value, "number", 3)}
               required
@@ -152,6 +178,7 @@ export default function BillingForm({ stepTitle, onSubmit }) {
             <TextInput
               label="Country"
               value={country}
+              name="country"
               placeholder="USA"
               onChange={(value) => handleInputChange("country", value)}
               required
@@ -162,6 +189,7 @@ export default function BillingForm({ stepTitle, onSubmit }) {
             <TextInput
               label="Zip Code"
               value={zipCode}
+              name="zipCode"
               placeholder="123456"
               onChange={(value) =>
                 handleInputChange("zipCode", value, "number", 6)
@@ -186,11 +214,11 @@ export default function BillingForm({ stepTitle, onSubmit }) {
 
         <p className="or-text">or</p>
 
-        <button className="plaid-button" onClick={() => {}}>
+        <button className="plaid-button" onClick={handleClickPlaid}>
           <img src={PlaidIcon} className="plaid-icon" alt="plaid-logo" />
         </button>
 
-        <button className="go-back-button" onClick={(e) => {}}>
+        <button className="go-back-button" onClick={handleClickGoBack}>
           <span className="go-back-text">Go Back</span>
         </button>
       </form>
