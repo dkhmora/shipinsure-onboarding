@@ -42,12 +42,14 @@ export default function PersonalInfoForm({ stepTitle, onSubmit }) {
 
     if (!email.trim()) {
       errors.email = "Email is required";
-    } else if (!email.includes("@")) {
+    } else if (!/^\S+@\S+\.\S+$/.test(email)) {
       errors.email = "Invalid email format";
     }
 
     if (!storeUrl.trim()) {
       errors.storeUrl = "Store URL is required";
+    } else if (!/^(ftp|http|https):\/\/[^ "]+$/.test(storeUrl)) {
+      errors.storeUrl = "Invalid URL format";
     }
 
     return errors;
