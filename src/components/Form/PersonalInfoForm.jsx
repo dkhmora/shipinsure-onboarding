@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Form.css";
 import TextInput from "./TextInput";
 
-export default function PersonalInfoForm() {
+export default function PersonalInfoForm({ stepTitle, onSubmit }) {
   const [formData, setFormData] = useState({
     storeName: "",
     fullName: "",
@@ -25,7 +25,7 @@ export default function PersonalInfoForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    onSubmit(stepTitle, formData);
   };
 
   const validateForm = () => {
@@ -110,7 +110,7 @@ export default function PersonalInfoForm() {
             !formValid ? "disabled-form-submit-button" : ""
           }`}
           type="submit"
-          disabled={formValid}
+          disabled={!formValid}
         >
           Confirm
         </button>

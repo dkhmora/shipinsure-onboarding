@@ -5,7 +5,7 @@ import TextInput from "./TextInput";
 import PaymentMethodIcons from "./PaymentMethodIcons";
 import QuestionIcon from "../../assets/icons/Question.svg";
 
-export default function BillingForm() {
+export default function BillingForm({ stepTitle, onSubmit }) {
   const [formData, setFormData] = useState({
     cardNumber: "",
     expiration: "",
@@ -16,10 +16,6 @@ export default function BillingForm() {
 
   const { cardNumber, expiration, cvc, country, zipCode } = formData;
 
-  const handleClickUpdate = (e, label) => {
-    console.log(e);
-  };
-
   const handleInputChange = (fieldName, value) => {
     setFormData((prevData) => ({
       ...prevData,
@@ -29,7 +25,7 @@ export default function BillingForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    onSubmit(stepTitle, formData);
   };
 
   const validateForm = () => {

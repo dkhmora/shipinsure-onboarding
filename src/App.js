@@ -7,8 +7,8 @@ import { onboardingSteps } from "./constants";
 function App() {
   const [steps, setSteps] = useState(onboardingSteps);
 
-  const handleFormSubmit = ({ formData }) => {
-    console.log(formData);
+  const handleFormSubmit = (stepTitle, formData) => {
+    console.log(stepTitle, formData);
   };
 
   return (

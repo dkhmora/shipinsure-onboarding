@@ -3,7 +3,7 @@ import "./Form.css";
 import Select from "./Select";
 import { numberOfOrdersSelection } from "../../constants";
 
-export default function MonthlyOrdersForm() {
+export default function MonthlyOrdersForm({ stepTitle, onSubmit }) {
   const [selectedIndex, setSelectedIndex] = useState(null);
 
   const handleInputChange = (value) => {
@@ -12,7 +12,7 @@ export default function MonthlyOrdersForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", numberOfOrdersSelection[selectedIndex]);
+    onSubmit(stepTitle, numberOfOrdersSelection[selectedIndex]);
   };
 
   const validateForm = () => {
