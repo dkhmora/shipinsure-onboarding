@@ -17,19 +17,29 @@ export default function PersonalInfoForm() {
 
       <section className="form-inputs-container">
         <section className="form-inputs-section">
-          <TextInput label="Store Name" required />
-
-          <TextInput label="Full Name" required />
+          <TextInput
+            label="Store Name"
+            required
+            textInputClassName="grey-text-input"
+          />
 
           <TextInput
-            label="Email address"
+            label="Full Name"
             required
+            textInputClassName="grey-text-input"
+          />
+
+          <TextInput
+            label="Email Address"
+            required
+            textInputClassName="text-input"
             onClickUpdate={handleClickUpdate}
           />
 
           <TextInput
             label="Store URL"
             required
+            textInputClassName="text-input"
             onClickUpdate={handleClickUpdate}
           />
         </section>

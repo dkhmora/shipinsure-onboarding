@@ -8,6 +8,7 @@ export default function TextInput({
   placeholder,
   required,
   onClickUpdate,
+  textInputClassName,
 }) {
   return (
     <section className="main-text-input-container">
@@ -19,7 +20,7 @@ export default function TextInput({
       <div className="text-input-container">
         <input
           type="text"
-          className="text-input"
+          className={textInputClassName}
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}

@@ -92,6 +92,27 @@ p {
 }
 
 .text-input {
+  width: calc(100% - 32px);
+  height: 48px;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 1px solid var(--surface-level-9, #06001e29);
+  padding-left: 16px;
+  padding-right: 16px;
+
+  color: var(--neutral-midnight-2, rgba(6, 0, 30, 0.75));
+  /* H6 */
+  font-family: Open Sans;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 117.647% */
+  letter-spacing: 0.15px;
+}
+
+.grey-text-input {
   background-color: #06001e0d;
   width: calc(100% - 32px);
   height: 48px;
@@ -122,6 +143,7 @@ p {
   bottom: 16px;
   border-width: 0px;
   cursor: pointer;
+  background-color: #fff;
 }
 
 .update-button-text {
