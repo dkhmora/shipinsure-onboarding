@@ -131,6 +131,7 @@ export default function BillingForm({ stepTitle, onSubmit, onClickGoBack }) {
           <TextInput
             label="Card Number"
             value={cardNumber}
+            name="cardNumber"
             placeholder="1111 2222 3333 4444"
             onChange={(value) =>
               handleCardNumberChange("cardNumber", value, 16)
@@ -144,6 +145,7 @@ export default function BillingForm({ stepTitle, onSubmit, onClickGoBack }) {
             <TextInput
               label="Expiration"
               value={expiration}
+              name="expiration"
               placeholder="MM/YY"
               onChange={(value) => handleInputChange("expiration", value)}
               textInputClassName="text-input"
@@ -153,6 +155,7 @@ export default function BillingForm({ stepTitle, onSubmit, onClickGoBack }) {
             <TextInput
               label="CVC"
               value={cvc}
+              name="cvc"
               placeholder="123"
               onChange={(value) => handleInputChange("cvc", value, "number", 3)}
               required
@@ -166,6 +169,7 @@ export default function BillingForm({ stepTitle, onSubmit, onClickGoBack }) {
             <TextInput
               label="Country"
               value={country}
+              name="country"
               placeholder="USA"
               onChange={(value) => handleInputChange("country", value)}
               required
@@ -176,6 +180,7 @@ export default function BillingForm({ stepTitle, onSubmit, onClickGoBack }) {
             <TextInput
               label="Zip Code"
               value={zipCode}
+              name="zipCode"
               placeholder="123456"
               onChange={(value) =>
                 handleInputChange("zipCode", value, "number", 6)

@@ -73,6 +73,7 @@ export default function PersonalInfoForm({ stepTitle, onSubmit }) {
           <TextInput
             label="Store Name"
             value={storeName}
+            name="storeName"
             onChange={(value) => handleInputChange("storeName", value)}
             required
             textInputClassName="grey-text-input"
@@ -82,6 +83,7 @@ export default function PersonalInfoForm({ stepTitle, onSubmit }) {
           <TextInput
             label="Full Name"
             value={fullName}
+            name="fullName"
             onChange={(value) => handleInputChange("fullName", value)}
             required
             textInputClassName="grey-text-input"
@@ -91,6 +93,7 @@ export default function PersonalInfoForm({ stepTitle, onSubmit }) {
           <TextInput
             label="Email Address"
             value={email}
+            name="email"
             onChange={(value) => handleInputChange("email", value)}
             required
             textInputClassName="text-input"
@@ -101,6 +104,7 @@ export default function PersonalInfoForm({ stepTitle, onSubmit }) {
           <TextInput
             label="Store URL"
             value={storeUrl}
+            name="storeUrl"
             onChange={(value) => handleInputChange("storeUrl", value)}
             required
             textInputClassName="text-input"
