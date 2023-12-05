@@ -51,23 +51,31 @@ export default function BillingForm({ stepTitle, onSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(stepTitle, formData);
+
+    const newFormData = {
+      billingDetails: {
+        ...formData.billingDetails,
+        cardNumber: formData.billingDetails.cardNumber.replaceAll(" ", ""),
+      },
+    };
+    onSubmit(stepTitle, newFormData);
   };
 
   const validateForm = () => {
     const errors = {};
 
-    // Basic required validation
     if (!cardNumber.trim()) {
       errors.cardNumber = "Card Number is required";
     }
 
-    if (cardNumber.length > 16) {
+    if (cardNumber.replaceAll(" ", "").length !== 16) {
       errors.cardNumber = "Card Number is supposed to be 16 characters";
     }
 
     if (!expiration.trim()) {
       errors.expiration = "Expiration is required";
+    } else if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(expiration)) {
+      errors.expiration = "Invalid expiration date format (MM/YY)";
     }
 
     if (!cvc.trim()) {
