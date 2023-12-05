@@ -93,6 +93,17 @@ p {
   flex-shrink: 0;
   border-radius: 8px;
   border-width: 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  color: var(--neutral-midnight-2, rgba(6, 0, 30, 0.75));
+  /* H6 */
+  font-family: Open Sans;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 117.647% */
+  letter-spacing: 0.15px;
 }
 
 .required-asterisk {
