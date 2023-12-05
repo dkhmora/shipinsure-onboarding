@@ -6,19 +6,11 @@ import ReviewSection from "./ReviewSection";
 import MonthlyOrdersForm from "./MonthlyOrdersForm";
 import BillingForm from "./BillingForm";
 
-export default function Container({ steps, onSubmit }) {
-  const getCurrentFormTitle = () => {
-    const firstFalseCompletedIndex = steps.findIndex((step) => !step.completed);
-    const formTitle =
-      firstFalseCompletedIndex >= 0
-        ? steps[firstFalseCompletedIndex].title
-        : "Success Page";
-
-    return formTitle;
-  };
-
-  const currentFormTitle = getCurrentFormTitle();
-
+export default function Container({
+  currentFormTitle,
+  onSubmit,
+  onClickGoBack,
+}) {
   const renderForm = (formTitle) => {
     switch (formTitle) {
       case "Personal Info":
@@ -26,7 +18,13 @@ export default function Container({ steps, onSubmit }) {
       case "Monthly Orders":
         return <MonthlyOrdersForm stepTitle={formTitle} onSubmit={onSubmit} />;
       case "Billing":
-        return <BillingForm stepTitle={formTitle} onSubmit={onSubmit} />;
+        return (
+          <BillingForm
+            stepTitle={formTitle}
+            onSubmit={onSubmit}
+            onClickGoBack={onClickGoBack}
+          />
+        );
       default:
         return (
           <div>

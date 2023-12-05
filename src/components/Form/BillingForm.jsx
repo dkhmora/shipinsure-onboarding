@@ -5,7 +5,7 @@ import TextInput from "./TextInput";
 import PaymentMethodIcons from "./PaymentMethodIcons";
 import QuestionIcon from "../../assets/icons/Question.svg";
 
-export default function BillingForm({ stepTitle, onSubmit }) {
+export default function BillingForm({ stepTitle, onSubmit, onClickGoBack }) {
   const [formData, setFormData] = useState({
     billingDetails: {
       cardNumber: "",
@@ -59,6 +59,18 @@ export default function BillingForm({ stepTitle, onSubmit }) {
       },
     };
     onSubmit(stepTitle, newFormData);
+  };
+
+  const handleClickPlaid = (e) => {
+    e.preventDefault();
+
+    console.log("Plaid is clicked");
+  };
+
+  const handleClickGoBack = (e) => {
+    e.preventDefault();
+
+    onClickGoBack();
   };
 
   const validateForm = () => {
@@ -188,11 +200,11 @@ export default function BillingForm({ stepTitle, onSubmit }) {
 
         <p className="or-text">or</p>
 
-        <button className="plaid-button" onClick={() => {}}>
+        <button className="plaid-button" onClick={handleClickPlaid}>
           <img src={PlaidIcon} className="plaid-icon" alt="plaid-logo" />
         </button>
 
-        <button className="go-back-button" onClick={(e) => {}}>
+        <button className="go-back-button" onClick={handleClickGoBack}>
           <span className="go-back-text">Go Back</span>
         </button>
       </form>

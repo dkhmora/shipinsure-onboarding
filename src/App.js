@@ -37,6 +37,28 @@ function App() {
   }, []);
 
   const isMobile = windowDimension && windowDimension <= 1024;
+  const firstFalseCompletedIndex = steps.findIndex((step) => !step.completed);
+
+  const getCurrentFormTitle = () => {
+    const formTitle =
+      firstFalseCompletedIndex >= 0
+        ? steps[firstFalseCompletedIndex].title
+        : "Success Page";
+
+    return formTitle;
+  };
+
+  const handleGoBack = () => {
+    setSteps((prevVal) => {
+      const curr = [...prevVal];
+      curr[firstFalseCompletedIndex - 1] = {
+        ...curr[firstFalseCompletedIndex - 1],
+        completed: false,
+      };
+
+      return curr;
+    });
+  };
 
   const handleFormSubmit = (stepTitle, formData) => {
     const stepTitleIndex = steps.findIndex((step) => step.title === stepTitle);
@@ -60,7 +82,11 @@ function App() {
     <div className="App">
       {isMobile ? <Header steps={steps} /> : <SideBar steps={steps} />}
 
-      <FormContainer steps={steps} onSubmit={handleFormSubmit} />
+      <FormContainer
+        currentFormTitle={getCurrentFormTitle()}
+        onSubmit={handleFormSubmit}
+        onClickGoBack={handleGoBack}
+      />
     </div>
   );
 }
