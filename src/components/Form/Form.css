@@ -203,6 +203,7 @@ p {
   padding-left: 16px;
   padding-right: 16px;
 
+  border: 1px solid #06001e0d;
   color: var(--neutral-midnight-2, rgba(6, 0, 30, 0.75));
   /* H6 */
   font-family: Open Sans;
