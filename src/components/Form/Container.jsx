@@ -4,7 +4,7 @@ import PersonalInfoForm from "./PersonalInfoForm";
 
 export default function Container() {
   return (
-    <div className="form-container">
+    <div className="main-container">
       <PersonalInfoForm />
     </div>
   );
