@@ -2,7 +2,8 @@ import React from "react";
 import RadioIcon from "../../assets/icons/Radio.svg";
 import CheckIcon from "../../assets/icons/Check.svg";
 
-export default function Steps({ steps }) {
+export default function Steps({ steps, selectedStepTitle }) {
+  console.log(selectedStepTitle);
   return (
     <div className="steps-container">
       {steps.map(({ title, required, completed }, index) => (
@@ -13,7 +14,17 @@ export default function Steps({ steps }) {
             <img src={RadioIcon} className="step-icon" alt="radio" />
           )}
 
-          <p className="default-step-text">{title}</p>
+          <p
+            className={
+              completed
+                ? "completed-step-text"
+                : selectedStepTitle === title
+                ? "selected-step-text"
+                : "default-step-text"
+            }
+          >
+            {title}
+          </p>
 
           {required ? <p className="required-step-text">Required</p> : null}
         </div>

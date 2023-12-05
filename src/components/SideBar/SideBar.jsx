@@ -5,10 +5,13 @@ import Steps from "./Steps";
 import HelpButton from "./HelpButton";
 
 export default function SideBar({ steps }) {
+  const firstFalseCompletedIndex = steps.findIndex((step) => !step.completed);
+  const selectedStepTitle = steps[firstFalseCompletedIndex].title;
+
   return (
     <div className="sidebar-container">
       <Header steps={steps} />
-      <Steps steps={steps} />
+      <Steps steps={steps} selectedStepTitle={selectedStepTitle} />
       <HelpButton />
     </div>
   );

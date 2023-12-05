@@ -87,15 +87,28 @@ p {
   margin-left: 16px;
 }
 
-.selected-step-text {
+.completed-step-text {
   color: var(--utility-purple, #6675ff);
 
   /* Open Sans/Btn 1 */
   font-family: Open Sans;
-  font-size: 16px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 700;
   line-height: 16px; /* 100% */
+  letter-spacing: 0.25px;
+  margin-left: 16px;
+}
+
+.selected-step-text {
+  color: var(--Calming-Breeze, #6675ff);
+
+  /* Open Sans/Btn 2 */
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px; /* 114.286% */
   letter-spacing: 0.25px;
   margin-left: 16px;
 }
