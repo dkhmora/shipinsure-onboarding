@@ -11,9 +11,10 @@ export default function TextInput({
   textInputClassName,
   hasError,
   postpend,
+  style,
 }) {
   return (
-    <section className="main-text-input-container">
+    <section className="main-text-input-container" style={style}>
       <p className="text-input-label">
         {label}
         {required ? <span className="required-asterisk">*</span> : null}

@@ -6,13 +6,14 @@ import PaymentMethodIcons from "./PaymentMethodIcons";
 
 export default function BillingForm() {
   const [formData, setFormData] = useState({
-    storeName: "",
-    fullName: "",
-    email: "",
-    storeUrl: "",
+    cardNumber: "",
+    expiration: "",
+    cvc: "",
+    country: "",
+    zipCode: "",
   });
 
-  const { storeName, fullName, email, storeUrl } = formData;
+  const { cardNumber, expiration, cvc, country, zipCode } = formData;
 
   const handleClickUpdate = (e, label) => {
     console.log(e);
@@ -34,22 +35,24 @@ export default function BillingForm() {
     const errors = {};
 
     // Basic required validation
-    if (!storeName.trim()) {
-      errors.storeName = "Store Name is required";
+    if (!cardNumber.trim()) {
+      errors.cardNumber = "Card Number is required";
     }
 
-    if (!fullName.trim()) {
-      errors.fullName = "Full Name is required";
+    if (!expiration.trim()) {
+      errors.expiration = "Expiration is required";
     }
 
-    if (!email.trim()) {
-      errors.email = "Email is required";
-    } else if (!email.includes("@")) {
-      errors.email = "Invalid email format";
+    if (!cvc.trim()) {
+      errors.cvc = "CVC is required";
     }
 
-    if (!storeUrl.trim()) {
-      errors.storeUrl = "Store URL is required";
+    if (!country.trim()) {
+      errors.country = "Country is required";
+    }
+
+    if (!zipCode.trim()) {
+      errors.zipCode = "Zip Code is required";
     }
 
     return errors;
@@ -75,14 +78,58 @@ export default function BillingForm() {
         <section className="form-inputs-section">
           <TextInput
             label="Card Number"
-            value={storeName}
+            value={cardNumber}
             placeholder="1111 2222 3333 4444"
             onChange={(value) => handleInputChange("storeName", value)}
-            required
             textInputClassName="text-input"
             hasError={errors.email}
             postpend={<PaymentMethodIcons />}
           />
+
+          <div className="multi-column-input-container">
+            <TextInput
+              label="Expiration"
+              value={expiration}
+              placeholder="MM/YY"
+              onChange={(value) => handleInputChange("storeName", value)}
+              textInputClassName="text-input"
+              hasError={errors.email}
+              style={{ flexShrink: 1 }}
+            />
+            <TextInput
+              label="CVC"
+              value={cvc}
+              placeholder="123"
+              onChange={(value) => handleInputChange("storeName", value)}
+              required
+              textInputClassName="text-input"
+              hasError={errors.email}
+              style={{ flexShrink: 1 }}
+            />
+          </div>
+
+          <div className="multi-column-input-container">
+            <TextInput
+              label="Country"
+              value={country}
+              placeholder="USA"
+              onChange={(value) => handleInputChange("storeName", value)}
+              required
+              textInputClassName="text-input"
+              hasError={errors.email}
+              style={{ flexShrink: 1 }}
+            />
+            <TextInput
+              label="Zip Code"
+              value={zipCode}
+              placeholder="123456"
+              onChange={(value) => handleInputChange("storeName", value)}
+              required
+              textInputClassName="text-input"
+              hasError={errors.email}
+              style={{ flexShrink: 1 }}
+            />
+          </div>
         </section>
 
         <button

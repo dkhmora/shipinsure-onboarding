@@ -345,3 +345,9 @@ p {
   flex-shrink: 0;
   margin-left: 10px;
 }
+
+.multi-column-input-container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
