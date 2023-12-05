@@ -1,5 +1,5 @@
 import React from "react";
-import "./Container.css";
+import "./Form.css";
 import PersonalInfoForm from "./PersonalInfoForm";
 import ReviewSection from "./ReviewSection";
 
