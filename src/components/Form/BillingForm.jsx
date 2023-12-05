@@ -3,6 +3,7 @@ import PlaidIcon from "../../assets/icons/PlaidLogo.svg";
 import "./Form.css";
 import TextInput from "./TextInput";
 import PaymentMethodIcons from "./PaymentMethodIcons";
+import QuestionIcon from "../../assets/icons/Question.svg";
 
 export default function BillingForm() {
   const [formData, setFormData] = useState({
@@ -63,9 +64,12 @@ export default function BillingForm() {
 
   return (
     <section class="form-container">
-      <h1 className="form-title-text">
-        ShipInsure is free, here is how it works
-      </h1>
+      <div className="form-title-container">
+        <h1 className="form-title-text">
+          ShipInsure is free, here is how it works
+        </h1>
+        <img src={QuestionIcon} className="question-icon" alt="question" />
+      </div>
 
       <p className="form-subtitle-text">
         In order to pay claims, ShipInsure refunds the customer directly or

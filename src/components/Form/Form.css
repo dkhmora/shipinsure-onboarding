@@ -23,6 +23,13 @@ p {
   margin-bottom: 100px;
 }
 
+.form-title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: start;
+}
+
 .form-title-text {
   color: var(--Slate, #3d5781);
   text-align: center;
@@ -350,4 +357,8 @@ p {
   display: flex;
   flex-direction: row;
   gap: 12px;
+}
+
+.question-icon {
+  margin-left: 6px;
 }
