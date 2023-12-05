@@ -309,19 +309,24 @@ p {
   letter-spacing: 0.25px;
   border-width: 0px;
   cursor: pointer;
-}
 
-.disabled-form-submit-button {
-  opacity: 0.5;
-}
+  &:disabled {
+    opacity: 0.5;
+  }
 
-.form-submit-button:hover {
-  background-color: var(--utility-purple-hover, #545ce8);
-}
+  &:disabled:hover {
+    background: var(--utility-purple, #6675ff);
+    cursor: default;
+  }
 
-.form-submit-button:active {
-  background: var(--utility-purple, #6675ff);
-  opacity: 0.5; /* Adjust the opacity value as needed */
+  &:hover {
+    background-color: var(--utility-purple-hover, #545ce8);
+  }
+
+  &:active {
+    background: var(--utility-purple, #6675ff);
+    opacity: 0.5; /* Adjust the opacity value as needed */
+  }
 }
 
 .select-item-container {
