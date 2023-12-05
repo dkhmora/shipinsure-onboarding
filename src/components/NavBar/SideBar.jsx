@@ -14,6 +14,7 @@ export default function SideBar({ steps }) {
   return (
     <div className="sidebar-container">
       <Header steps={steps} />
+
       <Steps steps={steps} selectedStepTitle={selectedStepTitle} />
       <HelpButton />
     </div>

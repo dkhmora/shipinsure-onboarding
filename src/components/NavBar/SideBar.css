@@ -9,6 +9,7 @@ p {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  bottom: 0;
   left: 0;
   flex-direction: column;
   width: 350px;

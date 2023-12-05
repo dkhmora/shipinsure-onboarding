@@ -17,13 +17,22 @@ p {
 
 .form-inputs-container {
   margin-top: 40px;
-  width: 100%;
+  width: calc(100% - 40px);
 }
 
 .multi-column-input-container {
   display: flex;
   flex-direction: row;
   gap: 20px;
+}
+
+.form-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  margin-bottom: 100px;
 }
 
 @media (min-width: 1024px) {
@@ -47,15 +56,6 @@ p {
     flex-direction: row;
     gap: 12px;
   }
-}
-
-.form-container {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  justify-content: top;
-  align-items: center;
-  margin-bottom: 100px;
 }
 
 .form-title-container {
