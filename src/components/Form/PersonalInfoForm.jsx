@@ -10,6 +10,8 @@ export default function PersonalInfoForm() {
     storeUrl: "",
   });
 
+  const { storeName, fullName, email, storeUrl } = formData;
+
   const handleClickUpdate = (e, label) => {
     console.log(e);
   };
@@ -26,7 +28,24 @@ export default function PersonalInfoForm() {
     console.log("Form submitted:", formData);
   };
 
-  const { storeName, fullName, email, storeUrl } = formData;
+  const validateForm = () => {
+    // Basic required validation
+    if (
+      !storeName.trim() ||
+      !fullName.trim() ||
+      !email.trim() ||
+      !storeUrl.trim()
+    ) {
+      return false;
+    }
+
+    // Simple email validation
+    if (!email.includes("@")) {
+      return false;
+    }
+
+    return true;
+  };
 
   return (
     <section class="form-container">
@@ -73,7 +92,13 @@ export default function PersonalInfoForm() {
           />
         </section>
 
-        <button className="main-button" type="submit">
+        <button
+          className={`form-submit-button ${
+            !validateForm() ? "disabled-form-submit-button" : ""
+          }`}
+          type="submit"
+          disabled={!validateForm()}
+        >
           Confirm
         </button>
       </form>
